@@ -1,0 +1,7 @@
+button.load.text=Letzte Tastenbelegungen laden
+button.load.hover=Die zuletzt gespeicherten Tastenbelegungen werden manuell geladen und übernommen.
+button.load.success=Die letzten Tastenbelegungen wurden geladen.
+
+button.save.text=Tastenbelegungen speichern
+button.save.hover=Die Tastenbelegungen werden separat gespeichert.
+button.save.success=Die Tastenbelegungen wurden gespeichert.

@@ -1,0 +1,7 @@
+button.load.text=Load last keybindings
+button.load.hover=The last saved keybindings will be loaded and applied manually.
+button.load.success=The last keybindings have been loaded.
+
+button.save.text=Save keybindings
+button.save.hover=The keybindings will be saved separately.
+button.save.success=The keybindings have been saved.
