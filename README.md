@@ -9,4 +9,5 @@ Allows to save and load hotkeys
 1. Download the latest jar file [here](https://github.com/ItsLeMax/KeybindLoader/releases/latest).
 2. Put it into the mods folder of your minecraft installation path (`%appdata%\.minecraft\mods` by default).\
 ![mods](https://github.com/user-attachments/assets/1767f46e-a303-4c1b-ac4a-f8c48f7e1c21)
-3. Use the provided functions as desired.
+3. Use the provided functions as desired.\
+![1 0 0-Features](https://github.com/user-attachments/assets/5e971459-d1b9-4030-a76b-04f2cdf5efa5)

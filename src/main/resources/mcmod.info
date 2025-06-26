@@ -1,6 +1,6 @@
 [
   {
-    "modid": "KeybindLoader",
+    "modid": "keybindloader",
     "name": "Keybind Loader",
     "description": "Ermöglicht das Speichern und Laden von Tastenbelegungen.",
     "version": "${version}",

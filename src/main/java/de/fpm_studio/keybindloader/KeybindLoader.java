@@ -14,7 +14,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 @Mod(modid = KeybindLoader.MOD_ID, name = KeybindLoader.NAME, version = KeybindLoader.VERSION, clientSideOnly = true)
 public final class KeybindLoader {
 
-    public static final String MOD_ID = "KeybindLoader";
+    public static final String MOD_ID = "keybindloader";
     public static final String NAME = "Keybind Loader";
     public static final String VERSION = "24.06.2025";
 
