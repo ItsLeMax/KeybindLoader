@@ -12,10 +12,10 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 
 /**
- * Enthält die Logik zum Laden und Speichern der Tastenbelegungen
+ * Contains the logic to save and load keybindings
  *
  * @author ItsLeMax
- * @since 24.06.2025
+ * @since 1.0.0
  */
 public final class KeybindHandler {
 
@@ -24,33 +24,33 @@ public final class KeybindHandler {
     );
 
     /**
-     * Lädt die Tastenbelegungen
+     * Loads the keybindings from a file
      *
      * @author ItsLeMax
-     * @since 24.06.2025
+     * @since 1.0.0
      */
     public void loadKeyBindings() {
 
         if (!CONFIG_FILE.exists())
             return;
 
-        // Datei wird gelesen
+        // File will be read
 
         try (final Reader reader = new InputStreamReader(Files.newInputStream(CONFIG_FILE.toPath()), StandardCharsets.UTF_8)) {
 
-            // Diese wird hier zu einem brauchbaren JSON-Objekt konvertiert
+            // It will be converted to a usable JSON object here
 
             final JsonObject jsonFile = new JsonParser().parse(reader).getAsJsonObject();
             final KeyBinding[] keyBindings = Minecraft.getMinecraft().gameSettings.keyBindings;
 
-            // Alle Tastenbelegungen werden abgeglichen mit denen der Datei bzw. des JSON-Objekts
+            // All keybindings will be compared with the ones of the file or JSON object
 
             for (KeyBinding keyBinding : keyBindings) {
 
                 if (!jsonFile.has(keyBinding.getKeyDescription()))
                     continue;
 
-                // Bei Übereinstimmung wird die Einstellung übernommen
+                // Setting will be applied on match
 
                 final int keyCode = jsonFile.get(keyBinding.getKeyDescription()).getAsInt();
                 keyBinding.setKeyCode(keyCode);
@@ -64,26 +64,26 @@ public final class KeybindHandler {
     }
 
     /**
-     * Speichert die Tastenbelegungen in eine Datei
+     * Saves the keybindings in a file
      *
      * @author ItsLeMax
-     * @since 24.06.2025
+     * @since 1.0.0
      */
     public void saveKeyBindings() {
 
         final KeyBinding[] keyBindings = Minecraft.getMinecraft().gameSettings.keyBindings;
 
-        // Die Datei wird erstellt
+        // The file will be created
 
         final JsonObject jsonFile = new JsonObject();
 
-        // Alle Tastenbelegungen werden Stück für Stück in dieser hinterlegt
+        // All keybindings will be added bit by bit
 
         for (final KeyBinding key : keyBindings) {
             jsonFile.addProperty(key.getKeyDescription(), key.getKeyCode());
         }
 
-        // Die Datei wird gespeichert
+        // The file will be saved
 
         try (final Writer writer = new OutputStreamWriter(Files.newOutputStream(CONFIG_FILE.toPath()), StandardCharsets.UTF_8)) {
 

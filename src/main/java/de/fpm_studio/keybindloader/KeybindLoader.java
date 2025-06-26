@@ -6,17 +6,17 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 /**
- * Enthält den Einstiegspunkt der Mod
+ * Contains the entry point of the mod
  *
  * @author ItsLeMax
- * @since 24.06.2025
+ * @since 1.0.0
  */
 @Mod(modid = KeybindLoader.MOD_ID, name = KeybindLoader.NAME, version = KeybindLoader.VERSION, clientSideOnly = true)
 public final class KeybindLoader {
 
     public static final String MOD_ID = "keybindloader";
     public static final String NAME = "Keybind Loader";
-    public static final String VERSION = "24.06.2025";
+    public static final String VERSION = "1.0.0";
 
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent preinit) {

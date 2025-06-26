@@ -9,10 +9,10 @@ import net.minecraftforge.client.event.GuiScreenEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 /**
- * Enthält die Logik für alle Knopfseitigen Events
+ * Contains the logic for all button related events
  *
  * @author ItsLeMax
- * @since 24.06.2025
+ * @since 1.0.0
  */
 public final class CustomButtonListener {
 
@@ -33,12 +33,12 @@ public final class CustomButtonListener {
         if (!(event.getGui() instanceof GuiControls))
             return;
 
-        // Knöpfe zum Speichern und Laden der Tastenbelegungen werden unter diesen Koordinaten erstellt
+        // Buttons to save and load the keybindings will be created under these coordinates
 
         final int x = 10;
         final int y = 10;
 
-        final int width = 200;
+        final int width = 175;
         final int height = 20;
 
         saveButton = new GuiButton(SAVE_BUTTON_ID, x, y, width, height, I18n.format("button.save.text"));
@@ -55,14 +55,14 @@ public final class CustomButtonListener {
         if (!(event.getGui() instanceof GuiControls))
             return;
 
-        // Bei Knopfdruck wird jede Tastenbelegung gespeichert
+        // Every keybinding will be saved
 
         if (event.getButton().id == SAVE_BUTTON_ID) {
             keybindHandler.saveKeyBindings();
             lastInteraction = SAVE_BUTTON_ID;
         }
 
-        // Bei Knopfdruck wird jede Tastenbelegung geladen
+        // Every keybinding will be loaded
 
         if (event.getButton().id == LOAD_BUTTON_ID) {
             keybindHandler.loadKeyBindings();
@@ -84,7 +84,7 @@ public final class CustomButtonListener {
         String tooltip = null;
         final boolean interactLately = System.currentTimeMillis() < hoverUpdateTime;
 
-        // Text wird beim Hovern angezeigt, mit besonderer Information nach Knopfdruck
+        // Text will be shown when hovering on the buttons, with special information after pressing a button
 
         if (saveButton.isMouseOver()) {
 
