@@ -61,6 +61,10 @@ public final class KeybindHandler {
             throw new RuntimeException(exception);
         }
 
+        // Apply changes
+
+        KeyBinding.resetKeyBindingArrayAndHash();
+
     }
 
     /**
