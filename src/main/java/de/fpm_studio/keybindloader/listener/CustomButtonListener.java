@@ -16,16 +16,16 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
  */
 public final class CustomButtonListener {
 
-    private final KeybindHandler keybindHandler = new KeybindHandler();
+    private static final int SAVE_BUTTON_ID = 9001;
+    private static final int LOAD_BUTTON_ID = 9002;
 
-    private final int SAVE_BUTTON_ID = 9001;
-    private final int LOAD_BUTTON_ID = 9002;
+    private static final KeybindHandler keybindHandler = new KeybindHandler();
 
-    private GuiButton saveButton;
-    private GuiButton loadButton;
+    private static GuiButton saveButton;
+    private static GuiButton loadButton;
 
-    private long hoverUpdateTime;
-    private int lastInteraction;
+    private static long hoverUpdateTime;
+    private static int lastInteraction;
 
     @SubscribeEvent
     public void onInitGui(GuiScreenEvent.InitGuiEvent.Post event) {
@@ -35,14 +35,15 @@ public final class CustomButtonListener {
 
         // Buttons to save and load the keybindings will be created under these coordinates
 
-        final int x = 10;
+        final int xLeft = 10;
+        final int xRight = event.getGui().width - (xLeft * 3);
         final int y = 10;
 
-        final int width = 175;
+        final int width = 20;
         final int height = 20;
 
-        saveButton = new GuiButton(SAVE_BUTTON_ID, x, y, width, height, I18n.format("button.save.text"));
-        loadButton = new GuiButton(LOAD_BUTTON_ID, x, (y + 25), width, height, I18n.format("button.load.text"));
+        saveButton = new GuiButton(SAVE_BUTTON_ID, xRight, y, width, height, "§a" + "✎");
+        loadButton = new GuiButton(LOAD_BUTTON_ID, xLeft, y, width, height, "§e" + "♻");
 
         event.getButtonList().add(saveButton);
         event.getButtonList().add(loadButton);

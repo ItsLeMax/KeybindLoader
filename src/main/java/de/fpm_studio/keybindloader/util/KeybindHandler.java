@@ -19,7 +19,7 @@ import java.nio.file.Files;
  */
 public final class KeybindHandler {
 
-    private final File CONFIG_FILE = new File(Minecraft.getMinecraft().gameDir,
+    private static final File CONFIG_FILE = new File(Minecraft.getMinecraft().gameDir,
             "config/keybindloader.json"
     );
 
@@ -83,9 +83,8 @@ public final class KeybindHandler {
 
         // All keybindings will be added bit by bit
 
-        for (final KeyBinding key : keyBindings) {
+        for (final KeyBinding key : keyBindings)
             jsonFile.addProperty(key.getKeyDescription(), key.getKeyCode());
-        }
 
         // The file will be saved
 
