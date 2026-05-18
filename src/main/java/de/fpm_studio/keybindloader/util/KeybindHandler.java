@@ -19,9 +19,8 @@ import java.nio.file.Files;
  */
 public final class KeybindHandler {
 
-    private static final File CONFIG_FILE = new File(Minecraft.getMinecraft().gameDir,
-            "config/keybindloader.json"
-    );
+    private static final File GAME_DIR = Minecraft.getMinecraft().gameDir;
+    private static final File CONFIG_FILE = new File(GAME_DIR, "config/keybindloader.json");
 
     /**
      * Loads the keybindings from a file
